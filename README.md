@@ -1,5 +1,7 @@
 # String-Implementation
 
 My own string implementation
-Made as a project to study
+
+I made it to study c++ thingies
+
 Propably contains a lot of bugs
