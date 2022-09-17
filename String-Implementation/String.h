@@ -1,6 +1,6 @@
 #pragma once
 
-/* File Name         : String.h
+/* File Name         : tring.h
 * Author             : Karol Pisarski
 * Version            : v1.2
 * Date               : 17/09/2022
@@ -127,5 +127,5 @@ class String
 			return it;
 		}
 
-	};
+};
 }

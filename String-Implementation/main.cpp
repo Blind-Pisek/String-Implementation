@@ -1,5 +1,5 @@
 #include <iostream>
-#include "String.h"
+#include "string.h"
 
 using namespace std;
 
@@ -36,7 +36,7 @@ int main() {
     str5.reverse();
     cout << str5 << endl;
 
-    // usuwanie spe³niaj¹ce kryterium
+    // usuwanie speï¿½niajï¿½ce kryterium
     kp::It<char> it1 = str6.begin();
     kp::It<char> it2 = str6.end();
 

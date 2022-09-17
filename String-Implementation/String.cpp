@@ -1,9 +1,9 @@
-#include "String.h"
+#include "string.h"
 
-namespace kp { 
+namespace kp 
+{ 
 
 String::String() : str_data(nullptr), str_size(0) {}
-
 
 String::String( const char* src_data ) 
 {
@@ -13,7 +13,6 @@ String::String( const char* src_data )
 		str_data[it] = src_data[it];
 	}
 }
-
 
 String::String(const String& _str) {
 	set_length(_str.str_size);
@@ -100,7 +99,7 @@ void String::delete_element(const size_t _index) {
 }
 // indeksowanie od 0
 void String::erase(size_t _pos, size_t _len) {
-	if (_pos<0 or _pos>str_size or _len<0 or _len>str_size or _pos+_len>str_size) {
+	if (_pos<0 || _pos>str_size or _len<0 || _len>str_size || _pos+_len>str_size) {
 		std::cout << "Index error!!!" << std::endl;
 		return;
 	}
