@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "string.h"
 
 using namespace std;
@@ -52,5 +53,6 @@ int main() {
     for (auto el : str6)
         cout << el;
   
+    getchar();
     return 0;
 }

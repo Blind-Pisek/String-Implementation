@@ -1,4 +1,5 @@
 #include "string.h"
+#include <cstring>
 
 namespace kp 
 { 
@@ -33,8 +34,8 @@ void String::set_length( const size_t new_size )
 
 void String::set_data( const String& _txt )
 {
-	// method doesn't checks if size is grater!
-	for ( size_t it = 0; _txt.str_data[it] != NULL; it++ ) 
+	// method doesn't check if size is grater!
+	for ( size_t it = 0; _txt.str_data[it] != '\0'; it++ ) 
 	{
 		str_data[it] = _txt.str_data[it];
 	}
@@ -86,7 +87,7 @@ void String::add_char(const char _el, const size_t _index) {
 }
 // indeksowanie od 0
 void String::delete_element(const size_t _index) {
-	if (_index < 0 or _index > str_size) {
+	if (_index < 0 || _index > str_size) {
 		std::cout << "Index error!!!" << std::endl;
 		return;
 	}
@@ -99,7 +100,7 @@ void String::delete_element(const size_t _index) {
 }
 // indeksowanie od 0
 void String::erase(size_t _pos, size_t _len) {
-	if (_pos<0 || _pos>str_size or _len<0 || _len>str_size || _pos+_len>str_size) {
+	if (_pos<0 || _pos>str_size || _len<0 || _len>str_size || _pos+_len>str_size) {
 		std::cout << "Index error!!!" << std::endl;
 		return;
 	}
@@ -125,7 +126,7 @@ void String::to_upper() {
 	char* _el = this->str_data;
 	while (*_el != '\0')
 	{
-		if (int(*_el) >= 97 and int(*_el) <= 122)
+		if (int(*_el) >= 97 && int(*_el) <= 122)
 			*_el = char(*_el - 32);
 		_el++;
 	}
@@ -135,7 +136,7 @@ void String::to_lower() {
 	char* _el = this->str_data;
 	while (*_el != '\0')
 	{
-		if (int(*_el) >= 65 and int(*_el) <= 90) 
+		if (int(*_el) >= 65 && int(*_el) <= 90) 
 			*_el = char(*_el + 32);
 		_el++;
 	}

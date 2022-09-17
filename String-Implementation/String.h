@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MY_STRING_H 
+#define MY_STRING_H
 
 /* File Name         : tring.h
 * Author             : Karol Pisarski
@@ -129,3 +130,6 @@ class String
 
 };
 }
+
+
+#endif /* MY_STRING_H */
