@@ -16,42 +16,41 @@
 namespace kp 
 {
 
+/// @brief Iterator class
+/// @tparam T type of data
 template<typename T>
 class It 
 {
 	private:
-		T* _data;	
+		T* _data;	// Iterator data pointer	
 
 	public:
-		It(T* data) {
-			this->_data = data;
-		}
 
-		T& operator*() {
-			return *_data;
-		}
+		/// @brief Generates pointer to specific data
+		/// @param data data to point
+		It( T* data ) { this->_data = data; }
 
-		It<T>& operator++() {
+		T& operator*() { return *_data; }
+
+		It<T>& operator++() 
+		{
 			_data++;
 			return *this;
 		}
 
-		It<T>& operator--() {
+		It<T>& operator--() 
+		{
 			_data--;
 			return *this;
 		}
 
-		bool operator==(const It<T>& a) {
-			return _data == a._data;
-		}
+		bool operator==( const It<T>& a ) { return _data == a._data; }
 
-		bool operator!=(const It<T>& a) {
-			return _data != a._data;
-		}
+		bool operator!=( const It<T>& a ) { return _data != a._data; }
 
 	};
 
-/// @brief 
+/// @brief String implementation
 class String 
 {
 	public:
@@ -59,11 +58,13 @@ class String
 
 	private:
 		/* Private attributes */
+
 		char* str_data;		// pointer to string data
 		size_t str_size;	// string size
 
 	public:
 		/* Public methods */
+
 		/// @brief Creates empty String with size 0 without data
 		String();
 
@@ -90,30 +91,46 @@ class String
 		/// @param _index number of element to be deleted
 		void delete_element(const size_t _index);
 
-		/// @brief 
-		/// @param _pos 
-		/// @param _len 
+		/// @brief Deletes range of elements in String
+		/// @param _pos index to start erasing
+		/// @param _len index to end erasing
 		void erase(size_t _pos, size_t _len);
 
 		/// @brief 
-		/// @param _first 
+		/// @param _first iterator to 
 		/// @param _last 
 		void erase(It<char> _first, It<char> _last);
-	
+
+		/// @brief Makes every String char uppercase
 		void to_upper();
+
+		/// @brief Makes every String char lowercase
 		void to_lower();
+
+		/// @brief Reverses whole String
 		void reverse();
 
-		char operator[](const size_t _pos);
+		/// @brief 
+		/// @param _pos position in String to read
+		/// @return char at specified position
+		char operator[](const size_t _pos) const;
+
+		/// @brief 
+		/// @param iostream 
+		/// @param _str 
+		/// @return 
 		friend std::ostream& operator<<(std::ostream& iostream, const kp::String& _str);
 		friend String operator+(const String& string1, const String& string2);
 
-		//iterator
+		/// @brief Generates iterator to first element of String
+		/// @return iterator to first element 
 		It<char> begin() {
 			It<char> it(str_data);
 			return it;
 		}
 
+		/// @brief Generates iterator to last element of String
+		/// @return iterator to last element
 		It<char> end() {
 			It<char> it(str_data + str_size);
 			return it;
@@ -123,6 +140,7 @@ class String
 
 	private:
 		/* Private methods */
+
 		/// @brief Sets string size
 		//	Warning! Method erases data inside object
 		/// @param new_size Size of new string

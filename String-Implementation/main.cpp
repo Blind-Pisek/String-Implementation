@@ -4,7 +4,8 @@
 
 using namespace std;
 
-int main() {
+int main() 
+{
 
     kp::String str4("Ola");
     kp::String str5("Karol");
