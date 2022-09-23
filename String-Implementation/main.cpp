@@ -6,27 +6,28 @@ using namespace std;
 
 int main() 
 {
+    // Basic usage test
 
-    kp::String str4("Ola");
+    kp::String str4("Egg");
     kp::String str5("Karol");
-    kp::String str6("Papito");
+    kp::String str6("Something");
 
-    //konkatenacja
+    // concatenation
     kp::String str1("Merry");
     kp::String str2("Christmas");
     kp::String str3 = str1 + " " + str2;
     cout << str3 << endl;
 
-    //dodawanie znaku
+    // adding char into String
     str3.add_char('!', 14);
     cout << str3 << endl;
 
-    // dodawanie i lower case
+    // sum and lower case
     str4.to_lower();
     str4.add_char('T', 0);
     cout << str4 << endl;
 
-    // usuwanie
+    // deleting element
     str4.delete_element(0);
     cout << str4 << endl;
 
@@ -38,7 +39,6 @@ int main()
     str5.reverse();
     cout << str5 << endl;
 
-    // usuwanie spe�niaj�ce kryterium
     kp::It<char> it1 = str6.begin();
     kp::It<char> it2 = str6.end();
 
@@ -54,6 +54,5 @@ int main()
     for (auto el : str6)
         cout << el;
   
-    getchar();
     return 0;
 }
