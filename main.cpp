@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "string.h"
+#include "String-Implementation/string.h"
 
 using namespace std;
 
@@ -8,14 +8,14 @@ int main()
 {
     // Basic usage test
 
-    kp::String str4("Egg");
-    kp::String str5("Karol");
-    kp::String str6("Something");
+    OwnString::String str4("Egg");
+    OwnString::String str5("Karol");
+    OwnString::String str6("Something");
 
     // concatenation
-    kp::String str1("Merry");
-    kp::String str2("Christmas");
-    kp::String str3 = str1 + " " + str2;
+    OwnString::String str1("Merry");
+    OwnString::String str2("Christmas");
+    OwnString::String str3 = str1 + " " + str2;
     cout << str3 << endl;
 
     // adding char into String
@@ -39,8 +39,8 @@ int main()
     str5.reverse();
     cout << str5 << endl;
 
-    kp::It<char> it1 = str6.begin();
-    kp::It<char> it2 = str6.end();
+    OwnString::It<char> it1 = str6.begin();
+    OwnString::It<char> it2 = str6.end();
 
     while (it1 != str6.end()) {
         cout << *it1 << endl;

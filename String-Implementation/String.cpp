@@ -1,7 +1,14 @@
+/* File Name         : string.h
+* Author             : Karol Pisarski
+* Email				 : karol.pisarski@outlook.com
+* Version            : v1.3 Final
+* Date               : 17/09/2022
+* Desciption         : This file contains the functions for the own stl string library			   
+********************************************************************************/
 #include "string.h"
 #include <cstring>
 
-namespace kp 
+namespace OwnString 
 { 
 
 String::String() : str_data(nullptr), str_size(0) {}
@@ -142,7 +149,7 @@ void String::reverse()
 
 char String::operator[]( const size_t _pos ) const { return this->get(_pos); }
 
-std::ostream& operator<<( std::ostream& ostream, const kp::String& _str ) 
+std::ostream& operator<<( std::ostream& ostream, const OwnString::String& _str ) 
 {
 	return ( ostream << _str.str_data );
 }
@@ -194,4 +201,4 @@ void String::add( const String& _txt )
 }
 
 
-} /* namespace kp */
+} /* namespace OwnString */
